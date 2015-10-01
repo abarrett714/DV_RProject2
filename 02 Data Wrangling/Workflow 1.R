@@ -2,7 +2,6 @@ require("jsonlite")
 require("RCurl")
 require("ggplot2")
 require("dplyr")
-tbl_df(df2)
 
 df2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% filter(MAG > 0, CON != "null") %>% arrange(CON, DIST)
 df2

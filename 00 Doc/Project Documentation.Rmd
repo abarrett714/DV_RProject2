@@ -4,6 +4,8 @@ author: "AdamMalachiJD"
 date: "September 30, 2015"
 output: html_document
 ---
+1)The first step of this project was to take the .csv file "hygdata_v3.csv" and reformat it using ETL code, which can be found in the 01 Data folder. This produced SQL code to create a table in Oracle and a reformatted csv file which was fit to be uploaded to oracle.
+2) This chunk of R calls a program which queries the oracle database for the table "StarData10k".
 ```{r}
 source("../01 Data/Database Creation Code.R", echo = TRUE)
 ```

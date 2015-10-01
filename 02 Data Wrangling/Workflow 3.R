@@ -14,13 +14,13 @@ ggplot() +
   scale_x_discrete() +
   scale_y_continuous() +
   labs(title='Stars') +
-  labs(x="Constellation", y=paste("Magnitude")) +
-  layer(data=df2, 
-        mapping=aes(as.character(CON), y=as.numeric(as.character(MAG))), 
+  labs(x="Constellation", y=paste("# of Stars")) +
+  layer(data=df3, 
+        mapping=aes(as.character(CON), y=as.numeric(as.character(n))), 
         stat="identity", 
         stat_params=list(), 
-        geom="point",
+        geom="histogram",
         geom_params=list(), 
-        #position=position_identity()
-        position=position_jitter(width=0.3, height=0)
+        position=position_identity()
+        #position=position_jitter(width=0.3, height=0)
   )
