@@ -13,9 +13,18 @@ source("../01 Data/Database Creation Code.R", echo = TRUE)
 ```
 3. The first workflow takes the dataframe (df) and selects 5 columns (ID, DIST, CON, ABSMAG, MAG), filters out stars where the Constellation is Null, and arranges it by Constellation and distance from Earth. 
 
-The first visualtization shows the star's magnitude (its brightness as seen from Earth) compared to which constallation it's in.
+The first visualization shows the star's magnitude (its brightness as seen from Earth) compared to which constallation it's in.
 ```{r}
 source("../02 Data Wrangling/Workflow 1.R", echo = TRUE)
 ```
 
 This Visualization shows that the constellations all have a relatively similar distribution of magnitudes around 8.5
+
+In the second work flow, from the dataframe (df), ID, DIST, CON and LUM are selected, filtering out stars that are not in constellations and only taking the top 99% the most luminous stars.
+
+The second visualization shows the top 99% of luminosity of stars across distance to the Earth, colored by constellations.
+```{r}
+source("../02 Data Wrangling/Workflow 2.R", echo = TRUE)
+```
+
+This graph shows that all of the most luminous stars are located relatively equidistant from the Earth. This is an interesting idea, showing that the variability in distance from the Earth is similar for the top 100 stars in the databse.

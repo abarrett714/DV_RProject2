@@ -1,10 +1,8 @@
 require("jsonlite")
 require("RCurl")
 require("ggplot2")
-
+require("dplyr")
 dfJ <- select(df, ID, DIST, CON, LUM) %>% mutate(lum_percent = cume_dist(LUM)) %>% filter(lum_percent >= .99, CON != "null")
-dfJ
-summary(dfJ)
 
 require(extrafont)
 ggplot() + 
