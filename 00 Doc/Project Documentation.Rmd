@@ -10,3 +10,10 @@ output: html_document
 ```{r}
 source("../01 Data/Database Creation Code.R", echo = TRUE)
 ```
+3) The first workflow takes the dataframe (df) and selects 5 columns (ID, DIST, CON, ABSMAG, MAG), filters out stars where the Constellation is Null, and arranges it by Constellation and distance from Earth. 
+The first visualtization shows the star's magnitude (its brightness as seen from Earth) compared to which constallation it's in.
+```{r}
+source("../02 Data Wrangling/Workflow 1.R", echo = TRUE)
+```
+
+This Visualization shows that the constellations all have a relatively similar distribution of magnitudes around 8.5
