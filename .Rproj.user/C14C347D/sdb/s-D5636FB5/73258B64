@@ -1,0 +1,17 @@
+{
+    "contents" : "---\ntitle: \"Titanic Project\"\nauthor: \"apb766, mew2795, jdg3666\"\ndate: \"September 13, 2015\"\noutput: html_document\n---\n\n1) This program uses SQL to assign all of the Titanic data to a dataframe and then prints out a subset and summary of the data.\n```{r}\nsource(\"../01 Data/Database.R\", echo = TRUE)\n```\n\n***\n\n2) These sections of code run ggplot() programs which produce each of the required plots of Titanic Data.\n\nThis first plot uses the whole database (including entries where sex is null) and displays Age compared to Fare.\n```{r eval = TRUE}\nsource(\"../02 Visualizations/TitanicPlot01.R\", echo = TRUE)\n```\n\nThe second plot displays the same information as the first but redefines the dataframe to exclude entries where sex is null.\n```{r}\nsource(\"../02 Visualizations/TitanicPlot02.R\", echo = TRUE)\n```\n\nThe third plot uses the same dataframe as the second but the scale of the x-axis becomes discrete and changes to the sex of the entry. Color(legend) is also redefined as whether or not the passenger survived.\n```{r}\nsource(\"../02 Visualizations/TitanicPlot03.R\", echo = TRUE)\n```\n\nFor the Fourth plot the variables are rearranged but the big difference is the addition of a facet command, which creates the 6 seperate plots.\n```{r}\nsource(\"../02 Visualizations/TitanicPlot04.R\", echo = TRUE)\n```\n\nSimilar to the Second plot, the fifth plot requires that we once more redefine the dataframe, this time only using entries with an age under 10.\n```{r}\nsource(\"../02 Visualizations/TitanicPlot05.R\", echo = TRUE)\n```\n\n\n3) We designed the last plot ourselves and it shows the survival rates of people over the age of 50, compared to which class they were in.\n\nThe last plot is similar to the fifth plot, though instead of populating the dataframe with the very young passengers, it examines the elderly. The scale and label of the axis remains the same but the data itself changes.\n```{r}\nsource(\"../02 Visualizations/TitanicPlot06.R\", echo = TRUE)\n```\n",
+    "created" : 1443665371948.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1967013776",
+    "id" : "73258B64",
+    "lastKnownWriteTime" : 1442347020,
+    "path" : "~/DataVisualization/DV_RProject1/00 Doc/Documentation.Rmd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

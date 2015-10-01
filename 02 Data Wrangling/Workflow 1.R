@@ -3,7 +3,7 @@ require("RCurl")
 require("ggplot2")
 tbl_df(df2)
 
-df2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% arrange(CON, DIST)
+df2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% filter(MAG > 0, CON != "null") %>% arrange(CON, DIST)
 df2
 summary(df2)
 
@@ -76,7 +76,7 @@ ggplot() +
   #facet_grid(.~CON, labeller=label_both) + # Same as facet_wrap but with a label.
   #facet_grid(PCLASS~SURVIVED, labeller=label_both) +
   labs(title='Stars') +
-  labs(x="Distance (parsecs)", y=paste("Magnitude")) +
+  labs(x="Constellation", y=paste("Magnitude")) +
   layer(data=df2, 
         mapping=aes(as.character(CON), y=as.numeric(as.character(MAG))), 
         stat="identity", 
