@@ -1,0 +1,18 @@
+{
+    "contents" : "require(\"jsonlite\")\nrequire(\"RCurl\")\nrequire(\"ggplot2\")\ntbl_df(df2)\n\ndf2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% arrange(CON, DIST)\ndf2\nsummary(df2)\n\nrequire(extrafont)\nggplot() + \n  coord_cartesian() + \n  scale_x_discrete() +\n  scale_y_continuous() +\n  #facet_wrap(~SURVIVED) +\n  #facet_grid(.~SURVIVED, labeller=label_both) + # Same as facet_wrap but with a label.\n  #facet_grid(PCLASS~SURVIVED, labeller=label_both) +\n  labs(title='Stars') +\n  labs(x=\"Constellation\", y=paste(\"Distance from Earth (lightyears)\")) +\n  layer(data=df2, \n        mapping=aes(x=as.character(CON), y=as.numeric(as.character(DIST))), \n        stat=\"identity\", \n        stat_params=list(), \n        geom=\"point\",\n        geom_params=list(), \n        #position=position_identity()\n        position=position_jitter(width=0.3, height=0)\n  )\n\nrequire(extrafont)\nggplot() + \n  coord_cartesian() + \n  scale_x_continuous() +\n  scale_y_continuous() +\n  #facet_wrap(~SURVIVED) +\n  #facet_grid(.~CON, labeller=label_both) + # Same as facet_wrap but with a label.\n  #facet_grid(PCLASS~SURVIVED, labeller=label_both) +\n  labs(title='Stars') +\n  labs(x=\"Constellation\", y=paste(\"Distance from Earth (lightyears)\")) +\n  layer(data=df2, \n        mapping=aes(x=as.numeric(as.character(ID)), y=as.numeric(as.character(DIST))), \n        stat=\"identity\", \n        stat_params=list(), \n        geom=\"point\",\n        geom_params=list(), \n        #position=position_identity()\n        position=position_jitter(width=0.3, height=0)\n  )\n\nrequire(extrafont)\nggplot() + \n  coord_cartesian() + \n  scale_x_continuous() +\n  scale_y_continuous() +\n  #facet_wrap(~SURVIVED) +\n  #facet_grid(.~CON, labeller=label_both) + # Same as facet_wrap but with a label.\n  #facet_grid(PCLASS~SURVIVED, labeller=label_both) +\n  labs(title='Stars') +\n  labs(x=\"Distance (parsecs)\", y=paste(\"Magnitude\")) +\n  layer(data=df2, \n        mapping=aes(x=as.numeric(as.character(DIST)), y=as.numeric(as.character(MAG))), \n        stat=\"identity\", \n        stat_params=list(), \n        geom=\"point\",\n        geom_params=list(), \n        #position=position_identity()\n        position=position_jitter(width=0.3, height=0)\n  )\n\nrequire(extrafont)\nggplot() + \n  coord_cartesian() + \n  scale_x_discrete() +\n  scale_y_continuous() +\n  #facet_wrap(~SURVIVED) +\n  #facet_grid(.~CON, labeller=label_both) + # Same as facet_wrap but with a label.\n  #facet_grid(PCLASS~SURVIVED, labeller=label_both) +\n  labs(title='Stars') +\n  labs(x=\"Distance (parsecs)\", y=paste(\"Magnitude\")) +\n  layer(data=df2, \n        mapping=aes(as.character(CON), y=as.numeric(as.character(MAG))), \n        stat=\"identity\", \n        stat_params=list(), \n        geom=\"point\",\n        geom_params=list(), \n        #position=position_identity()\n        position=position_jitter(width=0.3, height=0)\n  )",
+    "created" : 1443648395647.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3869112078",
+    "id" : "9DFE8C69",
+    "lastKnownWriteTime" : 1443652704,
+    "path" : "~/DataVisualization/DV_RProject2/02 Data Wrangling/Workflow 1.R",
+    "project_path" : "02 Data Wrangling/Workflow 1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
