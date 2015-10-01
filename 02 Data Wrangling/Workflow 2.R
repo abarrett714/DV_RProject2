@@ -2,7 +2,7 @@ require("jsonlite")
 require("RCurl")
 require("ggplot2")
 
-dfJ <- select(df, ID, DIST, CON, ABSMAG, MAG, LUM) %>% mutate(lum_percent = cume_dist(LUM)) %>% filter(lum_percent >= .99, CON != "null")
+dfJ <- select(df, ID, DIST, CON, LUM) %>% mutate(lum_percent = cume_dist(LUM)) %>% filter(lum_percent >= .99, CON != "null")
 dfJ
 summary(dfJ)
 
