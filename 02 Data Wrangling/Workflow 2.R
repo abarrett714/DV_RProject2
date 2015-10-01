@@ -15,7 +15,7 @@ ggplot() +
   #facet_grid(.~CON, labeller=label_both) + # Same as facet_wrap but with a label.
   #facet_grid(PCLASS~SURVIVED, labeller=label_both) +
   labs(title='Stars') +
-  labs(x="Distance from Earth", y=paste("lum_percent")) +
+  labs(x="Distance from Earth", y=paste("Luminosity Percentile")) +
   layer(data=dfJ, 
         mapping=aes(as.character(DIST), y=as.numeric(as.character(lum_percent)), color = CON), 
         stat="identity", 
