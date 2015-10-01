@@ -5,8 +5,8 @@ require("dplyr")
 tbl_df(df2)
 
 df2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% filter(MAG > 0, CON != "null") %>% arrange(CON, DIST)
-df2
-summary(df2)
+df3 <- df2 %>% group_by(CON) %>% summarise(n = n()) %>% arrange(n)
+df3
 
 require(extrafont)
 ggplot() + 
