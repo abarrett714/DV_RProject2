@@ -11,7 +11,7 @@ df <- read.csv(file_path, stringsAsFactors = FALSE)
 # Replace "." (i.e., period) with "_" in the column names.
 names(df) <- gsub("\\.+", "_", names(df))
 
-str(df) # Uncomment this and  run just the lines to here to get column types to use for getting the list of measures.
+#str(df) # Uncomment this and  run just the lines to here to get column types to use for getting the list of measures.
 
 measures <- c("id", "hip", "hd", "hr", "ra", "dec", "dist", "pmra", "pmdec", "rv", "mag", "absmag", "ci", "x", "y", "z", "vx", "vy", "vz", "rarad", "decrad", "pmrarad", "pmdecrad", "flam", "comp", "comp_primary", "lum", "var_min", "var_max")
 #measures <- NA # Do this if there are no measures.
