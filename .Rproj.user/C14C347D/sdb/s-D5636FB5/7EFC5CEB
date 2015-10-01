@@ -1,12 +1,12 @@
 {
-    "contents" : "---\ntitle: \"Documentation\"\nauthor: \"AdamMalachiJD\"\ndate: \"September 30, 2015\"\noutput: html_document\n---\n1)The first step of this project was to take the .csv file \"hygdata_v3.csv\" and reformat it using ETL code, which can be found in the 01 Data folder. This produced SQL code to create a table in Oracle and a reformatted csv file which was fit to be uploaded to oracle.\n2) This chunk of R calls a program which queries the oracle database for the table \"StarData10k\".\n```{r}\nsource(\"../01 Data/Database Creation Code.R\", echo = TRUE)\n```",
+    "contents" : "---\ntitle: \"Documentation\"\nauthor: \"AdamMalachiJD\"\ndate: \"September 30, 2015\"\noutput: html_document\n---\n1)The first step of this project was to take the .csv file \"hygdata_v3.csv\" and reformat it using ETL code, which can be found in the 01 Data folder. This produced SQL code to create a table in Oracle and a reformatted csv file which was fit to be uploaded to oracle.\n\n2) This chunk of R calls a program which queries the oracle database for the table \"StarData10k\".\n```{r}\nsource(\"../01 Data/Database Creation Code.R\", echo = TRUE)\n```",
     "created" : 1443665401769.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "231740850",
+    "hash" : "2096598416",
     "id" : "7EFC5CEB",
-    "lastKnownWriteTime" : 1443668053,
+    "lastKnownWriteTime" : 1443668342,
     "path" : "~/DataVisualization/DV_RProject2/00 Doc/Project Documentation.Rmd",
     "project_path" : "00 Doc/Project Documentation.Rmd",
     "properties" : {
