@@ -1,12 +1,12 @@
 {
-    "contents" : "require(\"jsonlite\")\nrequire(\"RCurl\")\nrequire(\"ggplot2\")\nrequire(\"dplyr\")\n\ndf2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% filter(MAG > 0, CON != \"null\") %>% arrange(CON, DIST)\ndf2\nsummary(df2)\n\nrequire(extrafont)\nggplot() + \n  coord_cartesian() + \n  scale_x_discrete() +\n  scale_y_continuous() +\n  labs(title='Stars') +\n  labs(x=\"Constellation\", y=paste(\"Magnitude\")) +\n  layer(data=df2, \n        mapping=aes(as.character(CON), y=as.numeric(as.character(MAG))), \n        stat=\"identity\", \n        stat_params=list(), \n        geom=\"point\",\n        geom_params=list(), \n        #position=position_identity()\n        position=position_jitter(width=0.3, height=0)\n  )",
+    "contents" : "require(\"jsonlite\")\nrequire(\"RCurl\")\nrequire(\"ggplot2\")\nrequire(\"dplyr\")\nrequire(\"tidyr\")\n\ndf2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% filter(MAG > 0, CON != \"null\") %>% arrange(CON, DIST)\n#summary(df2)\n\nrequire(extrafont)\nggplot() + \n  coord_cartesian() + \n  scale_x_discrete() +\n  scale_y_continuous() +\n  labs(title='Stars') +\n  labs(x=\"Constellation\", y=paste(\"Magnitude (relative to vega)\")) +\n  layer(data=df2, \n        mapping=aes(as.character(CON), y=as.numeric(as.character(MAG)), color=CON), \n        stat=\"identity\", \n        stat_params=list(), \n        geom=\"point\",\n        geom_params=list(), \n        #position=position_identity()\n        position=position_jitter(width=0.3, height=0)\n  )",
     "created" : 1443668082003.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "624005501",
+    "hash" : "2909055214",
     "id" : "D7A9CA8E",
-    "lastKnownWriteTime" : 1443668088,
+    "lastKnownWriteTime" : 1443670487,
     "path" : "~/DataVisualization/DV_RProject2/02 Data Wrangling/Workflow 1.R",
     "project_path" : "02 Data Wrangling/Workflow 1.R",
     "properties" : {

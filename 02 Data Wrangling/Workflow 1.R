@@ -2,10 +2,10 @@ require("jsonlite")
 require("RCurl")
 require("ggplot2")
 require("dplyr")
+require("tidyr")
 
 df2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% filter(MAG > 0, CON != "null") %>% arrange(CON, DIST)
-df2
-summary(df2)
+#summary(df2)
 
 require(extrafont)
 ggplot() + 
@@ -13,9 +13,9 @@ ggplot() +
   scale_x_discrete() +
   scale_y_continuous() +
   labs(title='Stars') +
-  labs(x="Constellation", y=paste("Magnitude")) +
+  labs(x="Constellation", y=paste("Magnitude (relative to vega)")) +
   layer(data=df2, 
-        mapping=aes(as.character(CON), y=as.numeric(as.character(MAG))), 
+        mapping=aes(as.character(CON), y=as.numeric(as.character(MAG)), color=CON), 
         stat="identity", 
         stat_params=list(), 
         geom="point",

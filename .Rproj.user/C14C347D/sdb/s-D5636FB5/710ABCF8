@@ -1,0 +1,18 @@
+{
+    "contents" : "require(\"jsonlite\")\nrequire(\"RCurl\")\nrequire(\"ggplot2\")\nrequire(\"dplyr\")\ntbl_df(df2)\n\ndf2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% filter(MAG > 0, CON != \"null\") %>% arrange(CON, DIST)\ndf3 <- df2 %>% group_by(CON) %>% summarise(n = n()) %>% arrange(n)\ndf3\n\nrequire(extrafont)\nggplot() + \n  coord_cartesian() + \n  scale_x_discrete() +\n  scale_y_continuous() +\n  labs(title='Stars') +\n  labs(x=\"Constellation\", y=paste(\"# of Stars\")) +\n  layer(data=df3, \n        mapping=aes(as.character(CON), y=as.numeric(as.character(n))), \n        stat=\"identity\", \n        stat_params=list(), \n        geom=\"histogram\",\n        geom_params=list(), \n        position=position_identity()\n        #position=position_jitter(width=0.3, height=0)\n  )",
+    "created" : 1443668671961.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1919785988",
+    "id" : "710ABCF8",
+    "lastKnownWriteTime" : 1443670694,
+    "path" : "~/DataVisualization/DV_RProject2/02 Data Wrangling/Workflow 3.R",
+    "project_path" : "02 Data Wrangling/Workflow 3.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
