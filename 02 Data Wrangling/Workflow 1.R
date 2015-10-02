@@ -5,7 +5,8 @@ require("dplyr")
 require("tidyr")
 
 df2 <- select(df, ID, DIST, CON, ABSMAG, MAG) %>% filter(MAG > 0, CON != "null") %>% arrange(CON, DIST)
-#summary(df2)
+#tbl_df(df2)
+head(df2)
 
 require(extrafont)
 ggplot() + 
