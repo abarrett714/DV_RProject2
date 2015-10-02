@@ -1,6 +1,6 @@
 ---
 title: "Project Documentation"
-author: "AdamMalachiJD"
+author: "apb766, jdg3666, mew2795"
 date: "September 30, 2015"
 output: html_document
 ---
@@ -34,10 +34,10 @@ source("../02 Data Wrangling/Workflow 2.R", echo = TRUE)
 This graph shows that all of the most luminous stars are located relatively equidistant from the Earth. This is an interesting idea, showing that the variability in distance from the Earth is similar for the top 100 stars in the databse.
 
 This visualization shows the stars that have a non-zero radial velocity colored by magnitude
+As part of my investigation I used the group_by function in my workflow to generate a table that shows the number of stars that each constellation has in this dataset.
+
 ```{r}
 source("../02 Data Wrangling/Workflow 4.R", echo = TRUE)
 ```
 
 This graph shows that the majority of stars in this dataset have a relation between the radial velocity and the x velocity. If the x-velocity is negative the radial velocity will be negative and if the x-volocity is positive the radial velocity will be positive.
-
-Using the grouby function I was able to generate a table that shows the number of stars that each constilation has in this dataset.
